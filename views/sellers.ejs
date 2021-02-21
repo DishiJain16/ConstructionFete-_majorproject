@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>home</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<!--hover krne p hi dropdown-->
+<style>
+   .dropdown:hover>.dropdown-menu{
+display:block;
+}
+body{
+background: #eee;
+}
+.single-portfolio{
+position: relative;
+overflow:hidden;
+}
+.portfolio-img{
+-webkit-transition: all .5s;
+-moz-transition: all .5s;
+-ms-transition: all .5s;
+-o-transition: all .5s;
+transition: all .5s;
+}
+.portfolio-text{
+position: absolute;
+bottom: 0;
+padding: 10px;
+width: 100%
+background: rgba(0,0,0,0.7);
+color:#fff;
+-webkit-transform:translateY(100%);
+
+-moz-transform:translateY(100%);
+-ms-transform:translateY(100%);
+-o-transform:translateY(100%);
+transform:translateY(100%);
+-webkit-transition:all .5s ease-out;
+-moz-transition:all .5s ease-out;
+-ms-transition:all .5s ease-out;
+-o-transition:all .5s ease-out;
+transition:all .5s ease-out;
+
+}
+.portfolio-text p{
+text-align: justify;
+}
+.single-portfolio:hover .portfolio-text{
+-webkit-transform: translateY(0);
+-moz-transform: translateY(0);
+-ms-transform: translateY(0);
+-o-transform: translateY(0);
+transform: translateY(0);
+}
+.single-portfolio:hover .portfolio-img{
+-webkit-transform: scale(1.15);
+-moz-transform:  scale(1.15);
+-ms-transform:  scale(1.15);
+-o-transform:  scale(1.15);
+transform: scale(1.15);
+} 
+</style>
+<nav class="navbar navbar-expand-sm navbar-light" style="background-color:orange;">
+<div class="container">
+<a href="/bshome" class="navbar-brand">Constructionfete</a>
+<button class="navbar-toggler" data-toggle="collapse" data-target="#barid">
+<span class="navbar-toggler-icon"> </span>
+
+</button>
+<div class="collapse navbar-collapse" id="barid">
+<ul class = "navbar-nav text-center ml-auto" >
+<li class="nav-item">
+<a href = "/bshome" class ="nav-link">Home</a>
+</li>
+
+<li class="nav-item dropdown">
+<a href = "#"class ="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
+<div class="dropdown-menu"style= "background-color:orange;">
+<a href="/contracting" class="dropdown-item" >Contracting</a>
+<a href="/consultingservice" class="dropdown-item" >Consulting</a>
+</div>
+</li>
+<li class="nav-item">
+<a href = "/sellers" class ="nav-link">Sellers</a>
+</li>
+<li class="nav-item">
+<a href = '/logout' class ="nav-link">Logout</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<br>
+</nav>
+<br>
+<h1 class="text-center">PRODUCTS AND SELLERS</h1>
+<br>
+<div class = "portfolio-area">
+<div class ="container">
+<div class = "row">
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="/cement"><img src ="cement.jpg" alt ="cement" class = "portfolio-img"  style= "width:100%; height:305px;"></a>
+<div class = "portfolio-text">
+<h3 style="color:black;">Cement</h3>
+
+</div>
+</div>
+</div>
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="/bathroom"><img src ="bathroom-accessories.jpg" alt ="bathroom" class = "portfolio-img"  style= "width:100%; height:305px;"></a>
+<div class = "portfolio-text">
+<h3 style="color:black;">Bathroom Accessories</h3>
+
+</div>
+</div>
+</div>
+
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="/bricks"><img src ="bricks.jpg" alt ="bricks" class = "portfolio-img"  style= "width:100%; height:305px;"></a>
+<div class = "portfolio-text">
+<h3 style="color:black;">Bricks and Blocks</h3>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<div class = "portfolio-area">
+<div class ="container">
+<div class = "row">
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="/sand"><img src ="sand-aggregate.jpeg" alt ="sand" class = "portfolio-img" style= "width:100%; height:305px;" >
+</a><div class = "portfolio-text">
+<h3 style="color:black;">Sand and Aggregates</h3>
+</div></div></div>
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="/electrical"><img src ="electrical.jpg" alt ="electrical" class = "portfolio-img" style= "width:100%; height:305px;" >
+</a><div class = "portfolio-text">
+<h3 style="color:black;">Electrical</h3>
+</div></div></div>
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="/plumbing"><img src ="PLUMBING.jpg" alt ="plumbing" class = "portfolio-img"  style= "width:100%; height:305px;"></a>
+<div class = "portfolio-text">
+<h3 style="color:black;">Plumbing</h3>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<div class = "portfolio-area">
+<div class ="container">
+<div class = "row">
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="/wooden"><img src ="wood.jpg" alt ="wooden" class = "portfolio-img"  style= "width:100%; height:305px;"></a>
+<div class = "portfolio-text">
+<h3 style="color:black;">Wooden Products</h3>
+
+</div>
+</div>
+</div>
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="/tiles"><img src ="tiles.jpg" alt ="tile" class = "portfolio-img" style= "width:100%; height:305px;" >
+</a><div class = "portfolio-text">
+<h3 style="color:white;">Tiles</h3>
+</div></div></div>
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="/tmt"><img src ="tmt-bar.png" alt ="tmt" class = "portfolio-img"  style= "width:100%; height:305px;"></a>
+<div class = "portfolio-text">
+<h3 style="color:black;">TMT Steel Bars</h3>
+
+</div>
+</div>
+</div>
+</div>
+</div> 
+</div>
+<br>
+<div class = "portfolio-area">
+<div class ="container">
+<div class = "row">
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="/paints"><img src ="paints.jpg" alt ="paint" class = "portfolio-img"  style= "width:100%; height:305px;"></a>
+<div class = "portfolio-text">
+<h3 style="color:white;">Paints and Finishes</h3>
+
+</div>
+</div>
+</div>
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="/hardware"><img src ="hardware.jpg" alt ="hardware" class = "portfolio-img" style= "width:100%; height:305px;" >
+</a><div class = "portfolio-text">
+<h3 style="color:black;">Hardware Fixtures</h3>
+</div></div></div>
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="/lighting"><img src ="lights.jpg" alt ="light" class = "portfolio-img"  style= "width:100%; height:305px;"></a>
+<div class = "portfolio-text">
+<h3 style="color:white;">Lighting and Fixtures</h3>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<div class = "portfolio-area">
+<div class ="container">
+<div class = "row">
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="/natural"><img src ="stones.jpg" alt ="stones" class = "portfolio-img"  style= "width:100%; height:305px;"></a>
+<div class = "portfolio-text">
+<h3 style="color:black;">Natural Stones</h3>
+
+</div>
+</div>
+</div>
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="/ready"><img src ="rmc.jpg" alt ="rmc" class = "portfolio-img" style= "width:100%; height:305px;" >
+</a><div class = "portfolio-text">
+
+<h3 style="color:white;">Ready Mix Concrete</h3>
+</div></div></div>
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="/upvc"><img src ="upvc.jpg" alt ="upvc" class = "portfolio-img"  style= "width:100%; height:305px;"></a>
+<div class = "portfolio-text">
+<h3 style="color:black;">UPVC Doors And Windows</h3>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<div class = "portfolio-area">
+<div class ="container">
+<div class = "row">
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="/homed"><img src ="decor.jpg" alt ="decor" class = "portfolio-img"  style= "width:100%; height:305px;"></a>
+<div class = "portfolio-text">
+<h3 style="color:black;">Home Decor</h3>
+
+</div>
+</div>
+</div>
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="roofing"><img src ="roofing.jpg" alt ="roof" class = "portfolio-img" style= "width:100%; height:305px;" >
+</a><div class = "portfolio-text">
+<h3 style="color:white;">Roofing Solutions</h3>
+</div></div></div>
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="/homea"><img src ="auto.jpg" alt ="auto" class = "portfolio-img"  style= "width:100%; height:305px;"></a>
+<div class = "portfolio-text">
+<h3 style="color:white;">Home Automation</h3>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<div class = "portfolio-area">
+<div class ="container">
+<div class = "row">
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="/modular"><img src ="kitchen.jpg" alt ="kitchen" class = "portfolio-img"  style= "width:100%; height:305px;"></a>
+<div class = "portfolio-text">
+<h3 style="color:black;">Modular Kitchen</h3>
+</div>
+</div>
+</div>
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="/construction"><img src ="chemicals.jpg" alt ="chemicals" class = "portfolio-img" style= "width:100%; height:305px;" >
+</a><div class = "portfolio-text">
+<h3 style="color:black;">Construction Chemicals</h3>
+</div></div></div>
+<div class = "col-4">
+<div class="single-portfolio">
+<a href ="/glass"><img src ="glass.jpg" alt ="glass" class = "portfolio-img"  style= "width:100%; height:305px;"></a>
+<div class = "portfolio-text">
+<h3 style="color:black;">Glass Hardware</h3>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+</body>
+</html>

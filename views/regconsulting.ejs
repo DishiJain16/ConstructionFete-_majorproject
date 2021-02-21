@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Consulting Registration</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!-- fa check -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body style ="background-image:url(h.jpg);background-repeat:no-repeat;background-size:100%100%;">
+<!--hover krne p hi dropdown-->
+<style>
+   .dropdown:hover>.dropdown-menu{
+display:block;
+}
+</style><nav class="navbar navbar-expand-sm navbar-dark" style="background-color:black;">
+<div class="container">
+<a href="/bshome" class="navbar-brand">Constructionfete</a>
+<button class="navbar-toggler" data-toggle="collapse" data-target="#barid">
+<span class="navbar-toggler-icon"> </span>
+
+</button>
+<div class="collapse navbar-collapse" id="barid">
+<ul class = "navbar-nav text-center ml-auto" >
+<li class="nav-item">
+<a href = "/bshome" class ="nav-link">Home</a>
+</li>
+<li class="nav-item dropdown">
+<a href = "#" class ="nav-link dropdown-toggle" data-toggle="dropdown">Registration</a>
+<div class="dropdown-menu" style= "background-color:black;">
+<a href="/becomeseller" class="dropdown-item" style="color:grey; ">Become a seller</a>
+<a href="#" class="dropdown-item nav-link dropdown-toggle" data-toggle="dropdown" style="color:grey;">Service provider</a>
+
+<div class="dropdown-menu" style= "background-color:black;">
+<a href="/regcontracting" class="dropdown-item " style="color:grey;" >Contracting</a>
+<a href="/regconsulting"  class="dropdown-item " style="color:grey;" >Consulting</a>
+</div>
+<a href="/customer" class="dropdown-item" style="color:grey; ">Customer</a>
+</div>
+</li>
+<li class="nav-item">
+ <a  class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Login</a>
+		  <div class="container">
+   <!-- The Modal -->
+  <div class="modal" id="myModal" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+		<div style= "background-image: url('h.jpg');background-repeat:no-repeat;background-size:100%100%; " >
+        <div class="modal-header" >
+          <h4 class="text-primary "/>Login&nbsp<i class = "fa fa-info-circle"></i></h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">     <form  action = "/login" method="POST">
+		<div class="form-group">		
+		<label style="font-size:20px;color:white;"> 
+<i class="fa fa-user"></i>&nbsp Login as a
+		  </label>
+		  <div class="row">
+                   <div class="col-3" >
+					<input type="radio"  name = "r0" value="seller"><small style = "color:white">&nbspSeller</small>
+		</div>
+					<div class="col-3" >
+					
+					<input type="radio" name = "r0" value = "contractor"><small style = "color:white;">&nbspContractor</small>
+		</div>
+					<div class="col-3" >
+					
+					<input type="radio" name = "r0" value = "consultant"><small style = "color:white;">&nbspConsultant</small>
+		</div>
+			<div class="col-3" >
+					
+					<input type="radio" name = "r0" value = "customer"><small style = "color:white;">&nbspCustomer</small>
+                    </div>
+			</div>	
+		    </div>
+			
+			
+			<div class="form-group">		
+		<label style="font-size:20px;color:white;"><i class="fa fa-mobile"></i>&nbsp Phone-number
+		  </label>
+		  <input type="text" name="mnumber" placeholder="Enter phone number" style="font-size:15px;color:white; background: transparent;width:90%;margin:20px;" class="form-control">
+		  </div> 
+		  
+		  <div class="form-group">
+		  <label style="font-size:20px;color:white;"><i class="fa fa-lock" ></i>&nbsp Password
+		  </label>
+		  <input type="password" name="passw" placeholder="Enter password"style="font-size:15px; color:white; background: transparent;width:90%;margin:20px;"class="form-control">
+		  </div>
+			</div>	  
+    <button type="submit" class="btn btn-primary" >Submit</button>
+  </form>
+
+		
+        </div>
+		</div>
+</div>
+</div>
+<li>
+</ul>
+</div>
+</div>
+<br>
+</nav>
+<br>
+<div class="container">
+  <div class="row">
+     <div class="col-6" style="margin-top:250px;">
+    <h1 class="text-left" style="font-family:new time roman;">Registration form</h1>
+<h5 class="text-left" style="font-family:new time roman;color:white;">If you are a Civil engineer, Architect, Interior designer and Lighting consultant, like to take contracts on Constructionfete platform, please follow the following instructions.</h5>
+<h6 style="color:white;"><i class="fa fa-check" style="color:black"></i>&nbsp Fill the registration form</h6>
+ <h6 style="color:white;"><i class="fa fa-check" style="color:black"></i>&nbsp Our team will verify about you in 2-3 business days</h6>
+  <h6 style="color:white;"><i class="fa fa-check" style="color:black"></i>&nbsp Constructionfete will provide the services at the negotiated days</h6>
+
+</div>
+
+<div class="col-6" style="box-shadow:-1px 1px 60px 10px black;margin-top:50px;">
+    
+<form action="/submit2" method="POST" onsubmit ="return validate2();">
+
+	<div class="row">
+     <div class="col-6">
+     <h3 class="text-left">Register as a consultant</h3>
+ </div>
+ <div class= "col-6 text-right" style="font-size:24px;"><i class ="fa fa-pencil"></i></div>
+ </div>
+          <hr>
+<div class="row">
+             <label class="col-3 control-label" style="color:white;font-size:19px;"><i class="fa fa-users"></i>&nbsp You are a</label><br>
+                   <div class="col-4" >
+					<input type="radio" name="ur2" value="civil2" ><small>&nbsp Civil engineer</small><br>
+					<input type="radio"  name="ur2" value = "architect2"><small>&nbsp Architect</small><br>
+                    </div>
+					<div class="col-5" >
+                    <input type="radio" name="ur2" value = "interior2"><small>&nbsp Interior designer</small><br>
+					<input type="radio" name="ur2" value = "consultant2"><small>&nbsp Lighting consultant</small><br>
+                    </div>
+                </div> <br>
+			<div class="row">
+             <label class="col-3 control-label" style="color:white;font-size:19px;"><i class="fa fa-building"></i>&nbsp Work for</label><br>
+                   <div class="col-5" >
+					<input type="checkbox"name = "commercial2" value = "yes"><small> Commercial Building </small><br>
+                    </div>
+					<br>
+					<div class="col-4">
+					<input type="checkbox" name = "residential2" value = "yes"><small>Residential Building</small><br>
+					</div>
+            </div> <br>
+<div class="row">
+            <label class="col-6 control-label"  style="color:white;font-size:19px;"><i class=" fa fa-user"></i>&nbsp Name</label>
+			
+             <label class="col-6 control-label"  style="color:white;font-size:19px;"><i class="fa fa-address-book"></i>&nbsp Moblie number</label>
+        </div>  
+
+<div class="row">
+           
+                   <div class="col-6" >
+                        <input type="text" class="form-control"name="Name2"placeholder="Name" style="background: transparent;color:white;"required>
+                    </div>
+
+                   <div class="col-6" >
+                        <input type="Mobile number" id = "mob2" class="form-control" name="mnumber2"  placeholder="Mobile Number" style="background: transparent;color:white;"required>
+                    </div>
+                </div>
+<br> <div class="row">
+
+<label class="col-6 control-label" style="color:white;font-size:19px;"><i class="fa fa-envelope"></i>&nbsp Email id</label>
+        
+			<label class="col-6 control-label" style="color:white;font-size:19px;"><i class="fa fa-address-card"></i>&nbsp Aadhar number</label>
+		</div>  
+
+<div class="row">
+           
+					<div class="col-6" >
+                        <input type="E-mail" id = "mail2" class="form-control" name="Email2" placeholder="Email id" style="background: transparent;color:white;"required>
+                    </div>
+
+                   <div class="col-6" >
+                        <input type=" Aadhar number" id = "aadharno2"class="form-control" name="aadharno2" placeholder="Aadhar number" style="background: transparent;color:white;"required>
+                    </div>
+
+                  
+                </div>
+<br>
+<div class="row">
+             <label class="col-6 control-label" style="color:white;font-size:19px;"><i class="fa fa-key"></i>&nbsp Password</label>
+<label class="col-6 control-label" style="color:white;font-size:19px;"><i class=" fa fa-key"></i>&nbsp Confirm Password</label>
+        </div>
+
+<div class="row">
+           
+                   <div class="col-6" >
+                        <input type="password" class="form-control" name="passw2"id = "passw02" placeholder="password" style="background: transparent;color:white;"required>
+                    </div>
+
+                   <div class="col-6" >
+                        <input type="password" class="form-control" name="pass2" id = "pass02"placeholder="password" style="background: transparent;color:white;"required>
+                    </div>
+                </div>
+<br>
+<input type ="checkbox" required><small style="color:white;">&nbsp <a href = "/tnc" >I agree to the terms and condition</a></small><br>
+         
+<button class ="btn btn-primary col-6" style="margin-top:20px; font-family:new time roman; width:30%; margin-left:20%; margin-bottom:20px;font-size:80%;">Submit</button>
+<a href="becomeseller.html"><div class="btn btn-primary col-6"style="margin-top:20px; font-family:new time roman; width:30%;margin-bottom:20px;font-size:80%;">Cancel</div></a>
+
+</form>
+</div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+		
+		function validate2()
+		{
+		var mo2 = document.getElementById("mob2").value;
+		var regx11 = /^[7-9][0-9]{9}$/;
+		if(regx11.test(mo2))
+		{
+		console.log("true");
+		}
+		else{
+		alert("Please enter valid mobile number");
+		return false;
+		}
+		
+		var email2 = document.getElementById("mail2").value;
+		var regx12 = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		if(regx12.test(email2))
+		{
+		console.log("true");
+		}
+		else{
+		alert("Please enter valid E-mail");
+		return false;
+		}
+		
+		
+		var  aadhar2= document.getElementById("aadharno2").value;
+		var regx13 = /^\d{12}$/;
+		if(regx13.test(aadhar2))
+		{
+		console.log("true");
+		}
+		else{
+		alert("Please enter valid Aadhar number");
+		return false;
+		}
+		
+		
+		var firstpass2 = document.getElementById("passw02").value;
+		var regx14 = /.{8,20}/;
+		if(regx14.test(firstpass2))
+		{
+		console.log("true");
+		}
+		else{
+		alert("Please enter password of atleast 8 character");
+		return false;
+		}
+		
+		
+		var secondpass2 = document.getElementById("pass02").value;
+		if(firstpass2==secondpass2)
+		{
+		return true;
+		}
+		else{
+		alert("Both passwords do not match ");
+		return false;
+		}
+		}
+
+				
+    </script>
+
+
+
+</body>
+
+</html>
+

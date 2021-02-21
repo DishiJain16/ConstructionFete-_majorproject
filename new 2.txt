@@ -1,0 +1,467 @@
+var express = require('express');
+var app = express();
+var session = require('express-session');
+//var path = require('path');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+app.set('view-engine', 'ejs') 
+var bodyParser = require("body-parser");
+var con = require("./connection");
+app.use(bodyParser.urlencoded({extended:true}))
+var RouteRoutes = require("./routes/route");
+app.use(bodyParser.json());
+app.use(express.static("public"));
+//var bcrypt = require('bcrypt');
+//app.use(express.static(__dirname + '/public'));
+app.use("/route", RouteRoutes);
+//routes
+
+
+app.get('/becomeseller', function(request, response){
+	response.render('becomeseller.ejs');
+});
+app.get('/bshome', function(request, response){
+	response.render('bshome.ejs');
+});
+
+app.get('/contracting', function(request, response){
+	response.render('contracting.ejs');
+});
+app.get('/sellers', function(request, response){
+	response.render('sellers.ejs');
+});
+app.get('/consultingservice', function(request, response){
+	response.render('consultingservice.ejs');
+});
+
+app.get('/regcontracting', function(request, response){
+	response.render('regcontracting.ejs');
+});
+
+app.get('/regconsulting', function(request, response){
+	response.render('regconsulting.ejs');
+});
+app.get('/customer', function(request, response){
+	response.render('customer.ejs');
+});
+
+app.get('/logout', function(request, response){
+	request.logout();
+	request.session.destroy();
+	response.redirect('/bshome');
+});
+/*
+app.use(function(request,response,next)
+{
+response.locals.isAuthenticated = request.isAuthenticated ();
+next();
+});*/
+  app.post('/submit',function(request,response)
+  { 
+  var sql = " INSERT INTO sellers VALUES('"+ request.body.Name +"', '"+ request.body.cname+"', "+ request.body.mnumber+", '"+ request.body.Email+"' ,'"+ request.body.GSTno+"','"+ request.body.Saddress+"','"+ request.body.PANno+"','"+ request.body.brand+"','"+ request.body.passw+"', '"+ request.body.pass+"','"+ request.body.cement+"','"+ request.body.tmt+"','"+ request.body.electrical+"','"+ request.body.wooden+"','"+ request.body.bathroom+"','"+ request.body.paint+"','"+ request.body.rmc+"','"+ request.body.automation+"','"+ request.body.dnw+"','"+ request.body.roofing+"', '"+ request.body.glass+"' ,'"+ request.body.sand+"','"+ request.body.bricks+"', '"+ request.body.plumbing+"' ,'"+ request.body.tiles+"' ,'"+ request.body.hardware+"' ,'"+ request.body.lighting+"' ,'"+ request.body.stones+"', '"+ request.body.homedecor+"' ,'"+ request.body.kitchen+"' ,'"+ request.body.chemicals+"','"+ request.body.youare+"')";
+  con.query(sql, function(err){
+  if(err) throw err
+  });
+  });
+	app.get('/cement', function(request,response){
+	con.query("SELECT * FROM sellers WHERE cement IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('cement.ejs', {title:'Cement sellers', items: result})
+	})
+	});
+	
+	app.get('/bathroom', function(request,response){
+	con.query("SELECT * FROM sellers WHERE bathroom IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('bathroom.ejs', {title:'Bathroom Accessories', items: result})
+	})
+	});
+	app.get('/bricks', function(request,response){
+	con.query("SELECT * FROM sellers WHERE bricks IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('bricks.ejs', {title:'Bricks and blocks', items: result})
+	})
+	});
+	
+	app.get('/sand', function(request,response){
+	con.query("SELECT * FROM sellers WHERE sand IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('sand.ejs', {title:'Sand and aggregates', items: result})
+	})
+	});
+	
+	app.get('/electrical', function(request,response){
+	con.query("SELECT * FROM sellers WHERE electrical IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('electrical.ejs', {title:'Electrical', items: result})
+	})
+	});
+	
+	
+	app.get('/plumbing', function(request,response){
+	con.query("SELECT * FROM sellers WHERE plumbing IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('plumbing.ejs', {title:'Plumbing', items: result})
+	})
+	});
+	
+	app.get('/wooden', function(request,response){
+	con.query("SELECT * FROM sellers WHERE wooden IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('wooden.ejs', {title:'Wooden products', items: result})
+	})
+	});
+	
+	
+	app.get('/tiles', function(request,response){
+	con.query("SELECT * FROM sellers WHERE tiles IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('tiles.ejs', {title:'Tiles', items: result})
+	})
+	});
+	
+	app.get('/tmt', function(request,response){
+	con.query("SELECT * FROM sellers WHERE tmt IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('tmt.ejs', {title:'TMT steel bars', items: result})
+	})
+	});
+	
+	app.get('/paints', function(request,response){
+	con.query("SELECT * FROM paint WHERE  IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('paints.ejs', {title:'Paints and finishes', items: result})
+	})
+	});
+	
+	app.get('/hardware', function(request,response){
+	con.query("SELECT * FROM sellers WHERE hardware IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('hardware.ejs', {title:'Hardware fixtures', items: result})
+	})
+	});
+	
+	app.get('/lighting', function(request,response){
+	con.query("SELECT * FROM sellers WHERE lighting IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('lighting.ejs', {title:'Lighting and fixtures', items: result})
+	})
+	});
+	
+	app.get('/natural', function(request,response){
+	con.query("SELECT * FROM sellers WHERE stones IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('natural.ejs', {title:'Natural stones', items: result})
+	})
+	});
+	
+	app.get('/ready', function(request,response){
+	con.query("SELECT * FROM sellers WHERE rmc IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('ready.ejs', {title:'Ready mix concrete', items: result})
+	})
+	});
+	
+	
+	app.get('/upvc', function(request,response){
+	con.query("SELECT * FROM sellers WHERE bnw IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('upvc.ejs', {title:'UPVC doors and windows', items: result})
+	})
+	});
+	
+	
+	app.get('/homed', function(request,response){
+	con.query("SELECT * FROM sellers WHERE homedecor IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('homed.ejs', {title:'Home decor', items: result})
+	})
+	});
+	
+	app.get('/roofing', function(request,response){
+	con.query("SELECT * FROM sellers WHERE roofing IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('roofing.ejs', {title:'Roofing solutions', items: result})
+	})
+	});
+	
+	
+	app.get('/homea', function(request,response){
+	con.query("SELECT * FROM sellers WHERE automation IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('homea.ejs', {title:'Homeautomation', items: result})
+	})
+	});
+	
+	
+	app.get('/modular', function(request,response){
+	con.query("SELECT * FROM sellers WHERE kitchen IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('modular.ejs', {title:'Modular Kitchen', items: result})
+	})
+	});
+	
+	
+	app.get('/construction', function(request,response){
+	con.query("SELECT * FROM sellers WHERE chemicals IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('construction.ejs', {title:'Construction chemicals', items: result})
+	})
+	});
+	
+	app.get('/glass', function(request,response){
+	con.query("SELECT * FROM sellers WHERE glass IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('glass.ejs', {title:'Glass hardware', items: result})
+	})
+	});
+	
+	
+	app.get('/civil1', function(request,response){
+	con.query("SELECT * FROM contracting WHERE civil1 IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('civil1.ejs', {title:'Civil Contractor', items: result})
+	})
+	});
+	
+	
+	app.get('/tile1', function(request,response){
+	con.query("SELECT * FROM contracting WHERE tile1 IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('tile1.ejs', {title:'Tile Contractor', items: result})
+	})
+	});
+	app.get('/plumbing1', function(request,response){
+	con.query("SELECT * FROM contracting WHERE plumbing1 IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('plumbing1.ejs', {title:'Plumbing Contractor', items: result})
+	})
+	});
+	
+	app.get('/electrical1', function(request,response){
+	con.query("SELECT * FROM contracting WHERE electrical1 IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('electrical1.ejs', {title:'Electrical Contractor', items: result})
+	})
+	});
+	
+	app.get('/paint1', function(request,response){
+	con.query("SELECT * FROM contracting WHERE paint1 IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('paint1.ejs', {title:'Paint Contractor', items: result})
+	})
+	});
+	app.get('/carpenter1', function(request,response){
+	con.query("SELECT * FROM contracting WHERE carpenter1 IS NOT NULL",function(err,result,field){
+	if(err) throw err
+	response.render('carpenter1.ejs', {title:'Carpenter', items: result})
+	})
+	});
+	app.get('/civil2', function(request,response){
+	con.query("SELECT * FROM consulting WHERE ur2 = 'civil2' ",function(err,result,field){
+	if(err) throw err
+	response.render('civil2.ejs', {title:'Civil engineer', items: result})
+	})
+	});
+	app.get('/architect2', function(request,response){
+	con.query("SELECT * FROM consulting WHERE ur2 = 'architect2' ",function(err,result,field){
+	if(err) throw err
+	response.render('architect2.ejs', {title:'Architect', items: result})
+	})
+	});
+	app.get('/interior2', function(request,response){
+	con.query("SELECT * FROM consulting WHERE ur2 = 'interior2' ",function(err,result,field){
+	if(err) throw err
+	response.render('interior2.ejs', {title:'Interior designer', items: result})
+	})
+	});
+	app.get('/consultant2', function(request,response){
+	con.query("SELECT * FROM consulting WHERE ur2 = 'consultant2' ",function(err,result,field){
+	if(err) throw err
+	response.render('consultant2.ejs', {title:'Lighting Consultant', items: result})
+	})
+	});
+	app.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
+}));
+		
+app.get('/bricks', function(request,response){
+	response.render('bricks.ejs', {title:'Bricks and blocks', user: result})
+	});
+	
+app.post('/login', function(request, response) {
+
+	var rbutton = request.body.r0;
+	var mnumber = request.body.mnumber;
+	var passw = request.body.passw;
+	if (mnumber && passw ) {
+		if(rbutton =='sellers')
+		{
+		con.query('SELECT * FROM sellers WHERE mnumber = ? AND passw = ?', [mnumber, passw], function(error, results, fields) {
+	
+			if (results.length > 0) {
+				request.session.loggedin = true;
+				request.session.mnumber = mnumber;
+				response.redirect('/bshome');
+			} else {
+				response.send('Incorrect Username and/or Password!');
+		}			
+			response.end();
+		});
+		}
+		
+		else if(rbutton == 'contractor')
+		{
+		
+		con.query('SELECT * FROM contracting WHERE mnumber1 = ? AND passw1 = ?', [mnumber, passw], function(error, results, fields) {
+			if (results.length > 0) {
+				request.session.loggedin = true;
+				request.session.mnumber = mnumber;
+				response.redirect('/bshome');
+			} else {
+				response.send('Incorrect Username and/or Password!');
+		}			
+			response.end();
+		});	
+			
+		}
+		else if(rbutton == 'consultant')
+		{
+		
+		con.query('SELECT * FROM consulting WHERE mnumber2 = ? AND passw2 = ?', [mnumber, passw], function(error, results, fields) {
+			if (results.length > 0) {
+				request.session.loggedin = true;
+				request.session.mnumber = mnumber;
+				response.redirect('/bshome');
+			} else {
+				response.send('Incorrect Username and/or Password!');
+		}			
+			response.end();
+		});	
+			
+		}
+		else if(rbutton == 'customer')
+		{
+		
+		con.query('SELECT * FROM coustomer WHERE mnumber3 = ? AND passw3 = ?', [mnumber, passw], function(error, results, fields) {
+			if (results.length > 0) {
+				request.session.loggedin = true;
+				request.session.mnumber = mnumber;
+				response.redirect('/bshome');
+			} else {
+				response.send('Incorrect Username and/or Password!');
+		}			
+			response.end();
+		});	
+			
+		}
+		} 
+		
+		
+		else {
+		response.send('Please enter Username and Password!');
+		response.end();
+	}
+});
+
+/*
+app.post('/login1', function(request, response) {
+	var mnumber1 = request.body.mnumber1;
+	var passw1 = request.body.passw1;
+	if (mnumber1 && passw1) {
+		con.query('SELECT * FROM contracting WHERE mnumber1 = ? AND passw1 = ?', [mnumber1, passw1], function(error, results, fields) {
+			if (results.length > 0) {
+				request.session.loggedin = true;
+				request.session.mnumber1 = mnumber1;
+				response.redirect('/bshome');
+			} else {
+				response.send('Incorrect Username and/or Password!');
+		}			
+			response.end();
+		});
+	} else {
+		response.send('Please enter Username and Password!');
+		response.end();
+	}
+});
+app.post('/login2', function(request, response) {
+	var mnumber2 = request.body.mnumber2;
+	var passw2 = request.body.passw2;
+	if (mnumber2 && passw2) {
+		con.query('SELECT * FROM consulting WHERE mnumber2 = ? AND passw2 = ?', [mnumber2, passw2], function(error, results, fields) {
+			if (results.length > 0) {
+				request.session.loggedin = true;
+				request.session.mnumber2 = mnumber2;
+				response.redirect('/bshome');
+			} else {
+				response.send('Incorrect Username and/or Password!');
+			
+
+		}			
+			response.end();
+		});
+	} else {
+		response.send('Please enter Username and Password!');
+		response.end();
+	}
+});
+app.post('/login3', function(request, response) {
+	var mnumber3 = request.body.mnumber3;
+	var passw3 = request.body.passw3;
+	if (mnumber3 && passw3) {
+		con.query('SELECT * FROM coustomer WHERE mnumber3 = ? AND passw3 = ?', [mnumber3, passw3], function(error, results, fields) {
+			if (results.length > 0) {
+				request.session.loggedin = true;
+				request.session.mnumber3 = mnumber3;
+				response.redirect('/bshome');
+			} else {
+				response.send('Incorrect Username and/or Password!');
+			
+
+		}			
+			response.end();
+		});
+	} else {
+		response.send('Please enter Username and Password!');
+		response.end();
+	}
+});*/
+/*
+app.use(bodyParser.urlencoded({extended : true}));
+app.use(bodyParser.json());
+app.get('/', function(request, response) {
+	response.sendFile(path.join(__dirname + '/becomeseller.ejs'));
+});*/
+
+ app.post('/submit1',function(request,response)
+  { 
+  var sql1 = " INSERT INTO contracting VALUES('"+ request.body.Name1 +"',  "+ request.body.mnumber1+", '"+ request.body.Email1+"' ,"+ request.body.aadharno1+",'"+ request.body.passw1+"','"+ request.body.pass1+"','"+ request.body.civil1+"','"+ request.body.tile1+"', '"+ request.body.plumbing1+"','"+ request.body.electrical1+"','"+ request.body.paint1+"','"+ request.body.carpenter1+"','"+ request.body.commercial1+"','"+ request.body.residential1+"')";
+  con.query(sql1, function(err){
+  if(err) throw err
+  });
+  });
+
+
+ app.post('/submit2',function(request,response)
+  { 
+  var sql2 = " INSERT INTO consulting VALUES('"+ request.body.Name2 +"',  "+ request.body.mnumber2+", '"+ request.body.Email2+"' ,"+ request.body.aadharno2+",'"+ request.body.passw2+"','"+ request.body.pass2+"','"+ request.body.commercial2+"','"+ request.body.residential2+"','"+ request.body.ur2+"')";
+  con.query(sql2, function(err){
+  if(err) throw err
+  });
+  });
+
+ app.post('/submit3',function(request,response)
+  { 
+  var sql3 = " INSERT INTO coustomer VALUES('"+ request.body.Name3 +"',  "+ request.body.mnumber3+", '"+ request.body.Email3+"' ,"+ request.body.aadharno3+",'"+ request.body.passw3+"','"+ request.body.pass3+"','"+ request.body.bt3+"')";
+  con.query(sql3, function(err){
+  if(err) throw err
+  });
+  });
+
+app.listen(3000,function(){ 
+	console.log("Server is running");
+});  
+
+

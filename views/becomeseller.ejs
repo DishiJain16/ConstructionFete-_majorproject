@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Become Seller</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!-- fa check -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body style ="background-image:url(h.jpg);background-repeat:no-repeat;background-size:100%100%;">
+<!--hover krne p hi dropdown-->
+<style>
+   .dropdown:hover>.dropdown-menu{
+display:block;
+}
+</style><nav class="navbar navbar-expand-sm navbar-dark" style="background-color:black;">
+<div class="container">
+<a href="/bshome" class="navbar-brand">Constructionfete</a>
+<button class="navbar-toggler" data-toggle="collapse" data-target="#barid">
+<span class="navbar-toggler-icon"> </span>
+
+</button>
+<div class="collapse navbar-collapse" id="barid">
+<ul class = "navbar-nav text-center ml-auto" >
+<li class="nav-item">
+<a href = "/bshome" class ="nav-link">Home</a>
+</li>
+
+<li class="nav-item dropdown">
+<a href = "#" class ="nav-link dropdown-toggle" data-toggle="dropdown">Registration</a>
+<div class="dropdown-menu" style= "background-color:black;">
+<a href="/becomeseller" class="dropdown-item" style="color:grey; ">Become a seller</a>
+<a href="#" class="dropdown-item nav-link dropdown-toggle" data-toggle="dropdown" style="color:grey;">Service provider</a>
+
+<div class="dropdown-menu" style= "background-color:black;">
+<a href="/regcontracting" class="dropdown-item " style="color:grey;" >Contracting</a>
+<a href="/regconsulting"  class="dropdown-item " style="color:grey;" >Consulting</a>
+</div>
+<a href="/customer" class="dropdown-item" style="color:grey; ">Customer</a>
+</div>
+</li>
+<li class="nav-item">
+ <a  class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Login</a>
+	
+	<div class="container">
+   <!-- The Modal -->
+  <div class="modal" id="myModal" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+		<div style="background-image:url(h.jpg);background-repeat:no-repeat;background-size:100%100%; " >
+        <div class="modal-header" >
+          <h4 class="text-primary "/>Login&nbsp<i class = "fa fa-info-circle"></i></h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">     <form  action = "/login" method="POST">
+		<div class="form-group">		
+		<label style="font-size:20px;color:white;"> 
+<i class="fa fa-user"></i>&nbsp Login as a
+		  </label>
+		  <div class="row">
+                   <div class="col-3" >
+					<input type="radio"  name = "r0" value="seller"><small style = "color:white">&nbspSeller</small>
+		</div>
+					<div class="col-3" >
+					
+					<input type="radio" name = "r0" value = "contractor"><small style = "color:white;">&nbspContractor</small>
+		</div>
+					<div class="col-3" >
+					
+					<input type="radio" name = "r0" value = "consultant"><small style = "color:white;">&nbspConsultant</small>
+		</div>
+			<div class="col-3" >
+					
+					<input type="radio" name = "r0" value = "customer"><small style = "color:white;">&nbspCustomer</small>
+                    </div>
+			</div>	
+		    </div>
+			
+			
+		<div class="form-group">		
+			<label style="font-size:20px;color:white;"><i class="fa fa-mobile"></i>&nbsp Phone-number
+			</label>
+			<input type="text" name="mnumber" placeholder="Enter phone number" style="font-size:15px;color:white; background: transparent;width:90%;margin:20px;" class="form-control">
+		</div> 
+		  
+		  <div class="form-group">
+		  <label style="font-size:20px;color:white;"><i class="fa fa-lock" ></i>&nbsp Password
+		  </label>
+		  <input type="password" name="passw" placeholder="Enter password"style="font-size:15px; color:white; background: transparent;width:90%;margin:20px;"class="form-control">
+		  </div>
+			</div>	  
+    <button type="submit" class="btn btn-primary" >Submit</button>
+  </form>
+
+		
+        </div>
+		</div>
+</div>
+</div>
+<li>
+</ul>
+</div>
+</div>
+<br>
+</nav>
+<br>
+<div class="container">
+  <div class="row">
+     <div class="col-6" style="margin-top:250px;">
+    <h1 class="text-left" style="font-family:new time roman;">Registration form</h1>
+<h5 class="text-left" style="font-family:new time roman;color:white;">If you are a Manufacturer or a Distributor supplying building and construction materials, and like to sell on Constructionfete platform, please follow the following instructions.</h5>
+<h6 style="color:white;"><i class="fa fa-check" style="color:black"></i>&nbsp Fill the registration form</h6>
+ <h6 style="color:white;"><i class="fa fa-check" style="color:black"></i>&nbsp Our team will verify your shops in 2-3 business days</h6>
+  <h6 style="color:white;"><i class="fa fa-check" style="color:black"></i>&nbsp Constructionfete will board your products at the pre negotiated days</h6>
+</div>
+
+<div class="col-6" style="box-shadow:-1px 1px 60px 10px black;margin-top:50px;">
+<form action="/submit" method="POST" onsubmit="return validate();">
+    <div class="row">
+     <div class="col-6">
+     <h3 class="text-left">Register as a seller</h3>
+ </div>
+ <div class= "col-6 text-right" style="font-size:24px;"><i class ="fa fa-pencil"></i></div>
+ </div>
+          <hr>
+<div class="row">
+             <label class="col-3 control-label" style="color:white;font-size:19px;"><i class="fa fa-users"></i>&nbsp You are a</label><br>
+                   <div class="col-4" >
+                        <input type="radio" name="youare" value="manufacturer"><small>&nbsp Manufacturer</small><br>
+<input type="radio" name="youare" value="Distributor"><small>&nbsp Distributor</small>
+                    </div>
+<div class="col-5" >
+                        <input type="radio" name="youare" value="Authorized Dealer"><small>&nbsp Authorized Dealer</small><br>
+<input type="radio" name="youare" value="Dealer"><small>&nbsp Dealer</small>
+                    </div>
+                </div> <br>
+<div class="row">
+             <label class="col-3 control-label" style="color:white;font-size:19px;"><i class="fa fa-shopping-cart"></i>&nbsp You sell</label><br>
+                   <div class="col-5" >
+<input type="checkbox" id = "c1" onclick="showHide1();"  ><small> Cement </small><br>
+<input id="Text1" placeholder = "Enter range Per 50 kg" type="text" name="cement" style ="visibility :hidden ;background:transparent;color:white;"/>
+    <br>
+<input type="checkbox" id = "c2" onclick="showHide2();" ><small> TMT Steel Bars </small><br>
+<input id="Text2" placeholder = "Enter range" type="text" name="tmt" style ="visibility :hidden ;background:transparent;color:white;"/>
+    <br>
+
+
+<input type="checkbox"  id = "c3" onclick="showHide3();"><small> Electrical </small> <br>
+<input id="Text3" placeholder = "Enter range" type="text" name="electrical" style ="visibility :hidden ;background:transparent;color:white;"/>
+    <br>
+
+<input type="checkbox" id = "c4" onclick="showHide4();"><small> Wooden Products </small> <br>
+<input id="Text4" placeholder = "Enter range" type="text" name="wooden" style ="visibility :hidden ;background:transparent;color:white;"/>
+    <br>
+
+<input type="checkbox"id = "c5" onclick="showHide5();"><small> Bathroom Accessories </small> <br>
+<input id="Text5" placeholder = "Enter range" type="text" name="bathroom" style ="visibility :hidden ;background:transparent;color:white;"/>
+    <br>
+
+<input type="checkbox"  id = "c6" onclick="showHide6();"><small> Paints & Finishes </small> <br>
+<input id="Text6" placeholder = "Enter range" type="text" name="paint" style ="visibility :hidden ;background:transparent;color:white;"/>
+    <br>
+
+<input type="checkbox" id = "c7" onclick="showHide7();"><small> RMC (Ready Mix Concrete) </small> <br>
+<input id="Text7" placeholder = "Enter range" type="text"  name="rmc" style ="visibility :hidden ;background:transparent;color:white;"/>
+    <br>
+
+<input type="checkbox"  id = "c8" onclick="showHide8();"><small> Home Automation </small> <br>
+<input id="Text8" placeholder = "Enter range" type="text" name="automation" style ="visibility :hidden ;background:transparent;color:white;"/>
+    <br>
+
+<input type="checkbox"  id = "c9" onclick="showHide9();"><small> UPVC Doors & Windows </small> <br>
+<input id="Text9" placeholder = "Enter range" type="text" name="dnw"style ="visibility :hidden ;background:transparent;color:white;"/>
+    <br>
+
+<input type="checkbox"  id = "c10" onclick="showHide10();"><small> Roofing Solutions </small> <br>
+<input id="Text10" placeholder = "Enter range" type="text" name="roofing" style ="visibility :hidden ;background:transparent;color:white;"/>
+    <br>
+
+<input type="checkbox"  id = "c11" onclick="showHide11();"><small> Glass Hardware </small> <br>
+ <input id="Text11" placeholder = "Enter range" type="text" name="glass" style ="visibility :hidden ;background:transparent;color:white;"/>
+    <br>
+               </div><br>
+<div class="col-4">
+<input type="checkbox" id = "c12" onclick="showHide12();"><small>Sand & Aggregates</small><br>
+<input id="Text12" placeholder = "Enter range" type="text" name="sand"  style ="visibility :hidden ;background:transparent;color:white;"/>
+    <br>
+
+<input type="checkbox" id = "c13" onclick="showHide13();"><small> Bricks & Blocks</small><br>
+<input id="Text13" placeholder = "Enter range" type="text"  name="bricks"  style ="visibility :hidden ;background:transparent;color:white;"/>
+    <br>
+
+<input type="checkbox"  id = "c14" onclick="showHide14();"><small>Plumbing</small><br>
+<input id="Text14" placeholder = "Enter range" type="text"  name="plumbing" style ="visibility :hidden ;background:transparent;color:white;"/>
+    <br>
+
+<input type="checkbox" id = "c15" onclick="showHide15();"><small>Tiles</small><br>
+<input id="Text15" placeholder = "Enter range" type="text" name="tiles" style ="visibility :hidden ;background:transparent;color:white;"/>
+    <br>
+
+<input type="checkbox" id = "c16" onclick="showHide16();"><small> Hardware & Fixtures</small><br>
+<input id="Text16" placeholder = "Enter range" type="text" name="hardware"  style ="visibility :hidden ;background:transparent;color:white;"/>
+    <br>
+
+<input type="checkbox"  id = "c17" onclick="showHide17();"><small> Lighting & Fixtures</small><br>
+<input id="Text17" placeholder = "Enter range" type="text" name="lighting" style ="visibility :hidden ;background:transparent;color:white;"/>
+    <br>
+
+<input type="checkbox"  id = "c18" onclick="showHide18();"><small> Natural Stones</small><br>
+<input id="Text18" placeholder = "Enter range" type="text" name="stones"style ="visibility :hidden ;background:transparent;color:white;"/>
+    <br>
+
+<input type="checkbox"  id = "c19" onclick="showHide19();"><small> Home Decor</small><br>
+<input id="Text19" placeholder = "Enter range" type="text"name="homedecor" style ="visibility :hidden ;background:transparent;color:white;"/>
+    <br>
+
+<input type="checkbox" id = "c20" onclick="showHide20();"><small> Modular Kitchen</small><br>
+<input id="Text20" placeholder = "Enter range" type="text" name="kitchen" style ="visibility :hidden ;background:transparent;color:white;"/>
+    <br>
+
+<input type="checkbox" id = "c21" onclick="showHide21();"><small> Chemicals</small><br>
+<input id="Text21" placeholder = "Enter range" type="text" name="chemicals" style ="visibility :hidden; background:transparent;color:white;"/>
+    <br>
+
+ </div>
+                </div> <br>
+<div class="row">
+             <label class="col-6 control-label" style="color:white;font-size:19px;"><i class=" fa fa-user"></i>&nbsp Name</label>
+<label class="col-6 control-label" style="color:white;font-size:19px;"><i class="fa fa-industry"></i>&nbsp Company name</label>
+        </div>  
+
+<div class="row">
+           
+                   <div class="col-6" >
+                        <input type="text" class="form-control" name="Name" placeholder="Name" style="background:transparent;color:white;" required>
+                    </div>
+
+                   <div class="col-6" >
+                        <input type="text" class="form-control" name="cname" placeholder="company name" style="background: transparent;color:white;"required>
+                    </div>
+                </div>
+<br> <div class="row">
+             <label class="col-6 control-label" style="color:white;font-size:19px;" ><i class="fa fa-address-book"></i>&nbsp Moblie number</label>
+<label class="col-6 control-label" style="color:white;font-size:19px;" ><i class="fa fa-envelope"></i>&nbsp Email id</label>
+        </div>  
+
+<div class="row">
+           
+                   <div class="col-6" >
+                        <input type=" mobile number"id ="mob" class="form-control" name="mnumber"  placeholder="Mobile number" style="background: transparent;color:white;"required>
+                    </div>
+
+                   <div class="col-6" >
+                        <input type="E-mail" id ="mail" class="form-control" name="Email" placeholder="Email id" style="background: transparent;color:white;"required>
+                    </div>
+
+                </div>
+<br><div class="row">
+             <label class="col-6 control-label" style="color:white;font-size:19px;"><i class=" fa fa-vcard"></i>&nbsp GST number</label>
+<label class="col-6 control-label" style="color:white;font-size:19px;"><i class="fa fa-address-card"></i>&nbsp Store Address</label>
+        </div>
+
+<div class="row">
+           
+                   <div class="col-6" >
+                        <input type=" GSTNumber" id = "gst" class="form-control" name="GSTno" placeholder="GST number"  style="background: transparent;color:white;"required>
+                    </div>
+
+                   <div class="col-6" >
+                        <input type="Address" class="form-control" name="Saddress" placeholder="Store address" style="background: transparent;color:white;"required>
+                    </div>
+                </div>
+<br>
+<div class="row">
+             <label class="col-6 control-label" style="color:white;font-size:19px;"><i class="fa fa-drivers-license"></i>&nbsp PAN number</label>
+<label class="col-6 control-label" style="color:white;font-size:19px;"><i class=" fa fa-bars"></i>&nbsp Authorized selling brands</label>
+        </div>
+
+<div class="row">
+           
+                   <div class="col-6" >
+                        <input type="PAN number" id = "pan" class="form-control" name="PANno" placeholder="PAN number" style="background: transparent;color:white;"required>
+                    </div>
+
+                   <div class="col-6" >
+                        <input type="text" class="form-control" name="brand" placeholder="Authorized selling brands" style="background: transparent;color:white;">
+                    </div>
+                </div>
+<br>
+<div class="row">
+             <label class="col-6 control-label" style="color:white;font-size:19px;"><i class="fa fa-key"></i>&nbsp Password</label>
+<label class="col-6 control-label" style="color:white;font-size:19px;"><i class=" fa fa-key"></i>&nbsp Confirm Password</label>
+        </div>
+
+<div class="row">
+           
+                   <div class="col-6" >
+                        <input type="password" class="form-control" id = "passw"name="passw" placeholder="password" style="background: transparent;color:white;"required>
+                    </div>
+
+                   <div class="col-6" >
+                        <input type="password" class="form-control" id = "pass"name="pass" placeholder="password" style="background: transparent;color:white;"required>
+                    </div>
+                </div>
+<br>
+<input type ="checkbox" ><small style="color:white;"required>&nbsp <a href = "/tnc">I agree to the terms and condition</a></small><br>
+         
+<button class ="btn btn-primary col-6" style="margin-top:20px; font-family:new time roman; width:30%; margin-left:20%; margin-bottom:20px;font-size:80%;">Submit</button>
+<a href="becomeseller.html"><div class="btn btn-primary col-6"style="margin-top:20px; font-family:new time roman; width:30%;margin-bottom:20px;font-size:80%;">Cancel</div></a>
+</form>
+</div>
+</div>
+</div>
+</div>
+    
+    <script type="text/javascript">
+    
+        function showHide1()
+        {
+            if(document.getElementById('c1').checked)
+            {
+                document.getElementById('Text1').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text1').style.visibility = 'hidden';
+            }
+        }
+		
+        function showHide2()
+        {
+            if(document.getElementById('c2').checked)
+            {
+                document.getElementById('Text2').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text2').style.visibility = 'hidden';
+            }
+        }
+		function showHide3()
+        {
+            if(document.getElementById('c3').checked)
+            {
+                document.getElementById('Text3').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text3').style.visibility = 'hidden';
+            }
+        }
+		function showHide4()
+        {
+            if(document.getElementById('c4').checked)
+            {
+                document.getElementById('Text4').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text4').style.visibility = 'hidden';
+            }
+        }
+		function showHide5()
+        {
+            if(document.getElementById('c5').checked)
+            {
+                document.getElementById('Text5').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text5').style.visibility = 'hidden';
+            }
+        }
+		function showHide6()
+        {
+            if(document.getElementById('c6').checked)
+            {
+                document.getElementById('Text6').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text6').style.visibility = 'hidden';
+            }
+        }
+		function showHide7()
+        {
+            if(document.getElementById('c7').checked)
+            {
+                document.getElementById('Text7').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text7').style.visibility = 'hidden';
+            }
+        }
+		function showHide8()
+        {
+            if(document.getElementById('c8').checked)
+            {
+                document.getElementById('Text8').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text8').style.visibility = 'hidden';
+            }
+        }
+		function showHide9()
+        {
+            if(document.getElementById('c9').checked)
+            {
+                document.getElementById('Text9').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text9').style.visibility = 'hidden';
+            }
+        }
+		function showHide10()
+        {
+            if(document.getElementById('c10').checked)
+            {
+                document.getElementById('Text10').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text10').style.visibility = 'hidden';
+            }
+        }
+		
+		
+		function showHide11()
+        {
+            if(document.getElementById('c11').checked)
+            {
+                document.getElementById('Text11').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text11').style.visibility = 'hidden';
+            }
+        }
+		function showHide12()
+        {
+            if(document.getElementById('c12').checked)
+            {
+                document.getElementById('Text12').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text12').style.visibility = 'hidden';
+            }
+        }
+		function showHide13()
+        {
+            if(document.getElementById('c13').checked)
+            {
+                document.getElementById('Text13').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text13').style.visibility = 'hidden';
+            }
+        }
+		function showHide14()
+        {
+            if(document.getElementById('c14').checked)
+            {
+                document.getElementById('Text14').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text14').style.visibility = 'hidden';
+            }
+        }
+		function showHide15()
+        {
+            if(document.getElementById('c15').checked)
+            {
+                document.getElementById('Text15').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text15').style.visibility = 'hidden';
+            }
+        }
+		function showHide16()
+        {
+            if(document.getElementById('c16').checked)
+            {
+                document.getElementById('Text16').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text16').style.visibility = 'hidden';
+            }
+        }
+		function showHide17()
+        {
+            if(document.getElementById('c17').checked)
+            {
+                document.getElementById('Text17').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text17').style.visibility = 'hidden';
+            }
+        }
+		function showHide18()
+        {
+            if(document.getElementById('c18').checked)
+            {
+                document.getElementById('Text18').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text18').style.visibility = 'hidden';
+            }
+        }
+		function showHide19()
+        {
+            if(document.getElementById('c19').checked)
+            {
+                document.getElementById('Text19').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text19').style.visibility = 'hidden';
+            }
+        }
+		function showHide20()
+        {
+            if(document.getElementById('c20').checked)
+            {
+                document.getElementById('Text20').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text20').style.visibility = 'hidden';
+            }
+        }
+		function showHide21()
+        {
+            if(document.getElementById('c21').checked)
+            {
+                document.getElementById('Text21').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Text21').style.visibility = 'hidden';
+            }
+        }
+		
+		function validate()
+		{
+		var mo = document.getElementById("mob").value;
+		var regx = /^[6-9][0-9]{9}$/;
+		if(regx.test(mo))
+		{
+		console.log("true");
+		}
+		else{
+		alert("Please enter valid mobile number");
+		return false;
+		}
+				
+		var email = document.getElementById("mail").value;
+		var regx1 = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		if(regx1.test(email))
+		{
+		console.log("true");
+		}
+		else{
+		alert("Please enter valid E-mail");
+		return false;
+		}
+		
+		
+		
+		var gstnum = document.getElementById("gst").value;
+		var regx2 = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9 A-Z]{1}Z[0-9  A-Z]{1}$/;
+		if(regx2.test(gstnum))
+		{
+		console.log("true");
+		}
+		else{
+		alert("Please enter valid GST number");
+		return false;
+		}
+		
+		var pannum = document.getElementById("pan").value;
+		var regx3= /^([A-Z]){5}([0-9]){4}([A-Z]){1}$/;
+		if(regx3.test(pannum))
+		{
+		console.log("true");
+		}
+		else{
+		alert("Please enter valid PAN number");
+		return false;
+		}
+		
+		
+		var firstpass = document.getElementById("passw").value;
+		var regx4 = /.{8,20}/;
+		if(regx4.test(firstpass))
+		{
+		console.log("true");
+		}
+		else{
+		alert("Please enter password of atleast 8 character");
+		return false;
+		}
+		
+		var secondpass = document.getElementById("pass").value;
+		if(firstpass==secondpass)
+		{
+		return true;
+		}
+		else{
+		alert("Both passwords do not match ");
+		return false;
+		}
+		
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    </script>
+</body>
+
+</html>
+

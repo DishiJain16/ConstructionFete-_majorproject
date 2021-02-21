@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "constructionfete-cvtc",
+  "private_key_id": "0260d794f4db3e3a8bd2ee26b09b2d3206b9f7c5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCzTDa1Z3crvTH6\n86i9A9n5hBAcYRB4+7omRO42sygp2O/YI1r9MxR5L3baC63LGRRHHM8Or3oNfnrH\n71pAWefLf2/hOhYshuqoM6FoKAsbBVPvf8DF7x9hT5K089WWmO57m8+OGWl5Uukv\n2rcJt4czfK6EqI3gC77Y9wZkVQe4vbAjBauHSfhvN5QZKJoPoFS+LK1vdg3yk1H7\nQ2gr4tv3u8jmMQ5QOPymYMt9bZzqeBbb2I2o0Lx1FcskdMvbS/wM946UFVqOkWk5\nWV+HK/gbdFFUJG/paBg7owd6moEILMD2PRK91ZI7aoBnzwn0v4lMfxK4NsZwyVua\nye1swZy1AgMBAAECggEACpaNboYB0W6Wn9a5bWa8/bv7multKG/ZIim/lYcGmqi0\ndTjqm87jPnV77nbHwxl5NeqGHGcRbUWS/kaXYlB3h0VrInZPLpRNvDQcVoMdhhwj\nmkjwOzVv+XZSWBGZgzoHGfvtXwYHfAIrl3IHjXEt8JpEJhJcGnx8aeH17yve97JR\nUw2a1lbXSpR5AYQEzfGCZ2gHtwhnE11DGJU6w9N2y5+PbG+UP1GrLVLSQ5LYyBmE\nB2JQVfTOYuaYUu9dhP54Xu+AGeOWlXaKGMokvCUeJ9Lzp33nXnPaW2+WrXN8h0x1\n6PPLUoO5kKcQ0d4bFU0w4jZfYUoYr+OpOEaReP+U2wKBgQDduCTm5U2AdLPok62s\nFTcIw/GT+4MDklLoQSW14/x+fu3DK9+HXW/+qQ7YMOCHzVYZujLdpUziJG25pRva\nNZtn4lQYiWuMIa+lqH1KBlbKl27kwPWCis9NJGoJHmc8HL5hMVoHp2ZUt4kcHuYo\ntCtQoF+jRB2qYR9ObWi4N7fbrwKBgQDPBPuyeqZnGvP4j7hnMfFqWDJyvHjIWsh9\ntrLsUjnHjg78lrhc1JsIABOLwLhRsm3RXuu5A4+PaXOtEsEsL4TPNYGUk2jlV4Tv\nA4J5px6aaJidG8i6b05sb/C+Fa08EfZnFYdVl8VY8PK/AoXtXQELA+etp3DVSOnd\nd6eggRey2wKBgAnT9MbLWUEdazAfA67CDft0fAvcNTV+UfB7mslSPsn4pF9nXXQp\nnyJBqifJGtrKLkvbpg+PGTZY+QgmmnJ0t9vF+4ZO6RaAE8IbEtqqJ0S5q6+2IevU\nbVX1DEI1N8xBVesG/f+i2vVcYVZ+xCL/wX/EbBjXlx0LSxD15pNr3Nl/AoGANhKZ\nI69Bk6DIpN31To8O/bX3x1xPOBXuVFfKOEvp56PFalh741NtAxPyBwjZnA08/fkL\nHRI/BziGDGjfqAjpaa4SIJq4RV8sy7lg9SGfrrkvU6oULg4wr8Y1XZEP5KbUc2x+\nIu83jtmwrg+cp7kpMpVciFE5+ZvH6h7828GcTQ0CgYBK92E+61iPvWXHx3nVR3bu\ngSOOy5lkbe/oIkGMaevwj5p1NZ6aTA17Bkwwln3HSRqp5gB0KE0NP55386HOpGcg\n5MQXoR8gXicdgJbRwL/xCc2XDSsE6IlWJtkGpRFmJTFEXqzk0/dFX6D4tgLS6vOJ\npQlK7pQpZ6w7fVPUqBNc5w==\n-----END PRIVATE KEY-----\n",
+  "client_email": "construction@constructionfete-cvtc.iam.gserviceaccount.com",
+  "client_id": "110319070262490938792",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/construction%40constructionfete-cvtc.iam.gserviceaccount.com"
+}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Success</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<!--hover krne p hi dropdown-->
+<style>
+   .dropdown:hover>.dropdown-menu{
+display:block;
+}
+</style>
+<nav class="navbar navbar-expand-sm navbar-light" style="background-color:orange;">
+<div class="container">
+<a href="/bshome" class="navbar-brand">Constructionfete</a>
+<button class="navbar-toggler" data-toggle="collapse" data-target="#barid">
+<span class="navbar-toggler-icon"> </span>
+
+</button>
+
+<div class="collapse navbar-collapse" id="barid">
+<ul class = "navbar-nav text-center ml-auto" >
+
+<li class="nav-item">
+<a href = "/bshome" class ="nav-link">Home</a>
+</li>
+
+
+<li class="nav-item dropdown">
+<a href = "#" class ="nav-link dropdown-toggle" data-toggle="dropdown">Registration</a>
+<div class="dropdown-menu" style= "background-color:orange;">
+<a href="/becomeseller" class="dropdown-item">Become a seller</a>
+<a href="#" class="dropdown-item nav-link dropdown-toggle" data-toggle="dropdown">Service provider</a>
+
+<div class="dropdown-menu" style= "background-color:orange;">
+<a href="/regcontracting" class="dropdown-item" >Contracting</a>
+<a href="/regconsulting" class = "dropdown-item" >Consulting</a>
+</div>
+<a href="/customer" class="dropdown-item">Customer</a></div>
+
+</li>
+<li class="nav-item">
+     <a  class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Login</a>
+ <div class="container">
+   <!-- The Modal -->
+  <div class="modal" id="myModal" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+     
+        <!-- Modal Header -->
+<div style= "background-image: url(h.jpg);background-repeat:no-repeat;background-size:100%100%; " >
+        <div class="modal-header" >
+          <h4 class="text-primary "/>Login&nbsp<i class = "fa fa-info-circle"></i></h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+       
+        <!-- Modal body -->
+        <div class="modal-body">
+        <form  action = "/login" method="POST">
+<div class="form-group">
+<label style="font-size:20px;color:white;">
+<i class="fa fa-user"></i>&nbsp Login as a
+ </label>
+ <div class="row">
+                   <div class="col-3" >
+<input type="radio"  name = "r0" value="seller"><small style = "color:white">&nbspSeller</small>
+</div>
+<div class="col-3" >
+
+<input type="radio" name = "r0" value = "contractor"><small style = "color:white;">&nbspContractor</small>
+</div>
+<div class="col-3" >
+
+<input type="radio" name = "r0" value = "consultant"><small style = "color:white;">&nbspConsultant</small>
+</div>
+<div class="col-3" >
+
+<input type="radio" name = "r0" value = "customer"><small style = "color:white;">&nbspCustomer</small>
+                    </div>
+</div>
+   </div>
+
+
+<div class="form-group">
+<label style="font-size:20px;color:white;"><i class="fa fa-mobile"></i>&nbsp Phone-number
+ </label>
+ <input type="text" name="mnumber" placeholder="Enter phone number" style="font-size:15px;color:white; background: transparent;width:90%;margin:20px;" class="form-control">
+ </div>
+ 
+ <div class="form-group">
+ <label style="font-size:20px;color:white;"><i class="fa fa-lock" ></i>&nbsp Password
+ </label>
+ <input type="password" name="passw" placeholder="Enter password"style="font-size:15px; color:white; background: transparent;width:90%;margin:20px;"class="form-control">
+ </div>
+</div>  
+    <button type="submit" class="btn btn-primary" >Submit</button>
+  </form>
+    </div>
+</div>
+</div>
+</div>
+</li>
+
+</ul>
+</div>
+</div>
+
+<br>
+</nav>
+<br>
+
+<marquee style = "font-size:30px; color :green;"><i> Successfully registered.....Please login your account for further services</i></marquee>
+<br>
+<br>
+<div class="container">
+<div class="carousel slide" id="myslider" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" >
+ <img src="i.jpg" alt="i.jpg"  height="500" width=100%/>
+ <div class="carousel-caption">
+ <h6>Discover the colourful world</h6>
+ <h1>Build Your Dream</h1>
+ <p>Register and enjoy the services </p>
+ </div></div>
+ 
+ <div class="carousel-item ">
+ <img src="10.jpeg" alt="10"   height="500" width=100%/>
+ </div>
+ <div class="carousel-item ">
+ <img src="a (6).jpg" alt="a (6).jpg"   height="500" width=100%/>
+ </div>
+ 
+ <div class="carousel-item ">
+ <img src="a (2).jpeg" alt="a (2).jpeg"   height="500" width=100%/>
+ </div>
+ 
+ <ul class="carousel-indicators">
+ <li data-target="#myslider" data-slide-to="0" class="active"> </li>
+ <li data-target="#myslider" data-slide-to="1" class=""> </li>
+ <li data-target="#myslider" data-slide-to="2" class=""> </li>
+ <li data-target="#myslider" data-slide-to="3" class=""> </li>
+ 
+ </ul>
+ <a href ="#myslider" data-slide="prev" class="carousel-control-prev"> 
+ <span class ="carousel-control-prev-icon"></span>
+ </a>
+ <a href ="#myslider" data-slide="next" class="carousel-control-next">
+ <span class ="carousel-control-next-icon"></span>
+ </a>
+</div></div>
+<br><br>
+<h1 class="text-center">SERVICES</h1><br>
+<div class="container">
+<div class="row">
+     <div class=" col-4" style = "text-align: center;"> <img src="consul.png" height="70" width="70"></div>
+     <div class=" col-4" style = "text-align: center;"> <img src="contrlogo.jpg" height="70" width="70"></div>
+          <div class=" col-4"style = "text-align: center;"> <img src="const.png" height="70" width="70"></div>
+ </div>
+  <div class="row">
+     <div class=" col-4"><b><h5 style = "  text-align: center;"> Consulting Services</h5></b></div>
+     <div class=" col-4"><b><h5 style = "  text-align: center;">Contracting Services</h5></b></div>
+          <div class=" col-4"><b><h5 style = "  text-align: center;">Construction Services<h5></b></div>
+ </div>
+  <div class="row">
+     <div class=" col-4"> <p style="font-size:12px; text-align: center;">We provide details of consultants who will provide 
+	 expert advice in a particular area that include Civil, 
+	 Engineers, Architects.</p></div>
+     <div class=" col-4"> <p style="font-size:12px; text-align: center;">  We provide details of contractors like plumbing 
+	contractors, tiles contractor, civil contractors etc.</p></div>
+          <div class=" col-4"><p style="font-size:12px; text-align: center;"> We provide details of sellers who will provide
+	all the goods and materials required by you like
+	cement, paint etc.</p></div>
+ </div>
+ <br><br>
+ <div class="jumbotron">
+ <div class="container">
+ <h5><i>Excellent customer service is the number one job in any company! It is the personality of the company and the reason customers come back. Without customers there is no company!.</i></h5>
+<br>
+ <h1 class= "text-center">AUTHORS</h1>
+ <br>
+
+ <div class="row">
+ <div class="col-xl-4 col-md-4 col-sm-4 col-4">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  <img src="aayush.jpg" height="150" width="150" class ="img-fluid rounded-circle"><br><br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbspAAYUSH CHATURVEDI</div>
+     <div class="col-xl-4 col-md-4 col-sm-4 col-4">&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp <img src="dishi1.jpg" height="150" width="150" class ="img-fluid rounded-circle"><br><br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspDISHI JAIN</div>
+          <div class="col-xl-4 col-md-4 col-sm-4 col-4">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   <img src="astha1.jpg" height="150" width="150" class ="img-fluid rounded-circle"><br><br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspASTHA SATIJA</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <!-- brand directory -->
+ 
+ 
+</body>
+ 
+</html>
